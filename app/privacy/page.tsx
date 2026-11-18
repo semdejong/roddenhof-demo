@@ -19,17 +19,17 @@ export default function PrivacyPage() {
             <p className="mt-4">{section.text}</p>
           </section>
         ))}
-        <p className="mt-8">
-          <a href={company.phoneTel} data-cta="bellen" className="link">
+        <p className="mt-8 flex flex-wrap items-center gap-x-3">
+          <a href={company.phoneTel} data-cta="bellen" className="link inline-flex min-h-11 items-center">
             {company.phoneDisplay}
           </a>
-          <span aria-hidden="true"> · </span>
-          <a href={company.mailto} data-cta="mailen" className="link">
+          <span aria-hidden="true">·</span>
+          <a href={company.mailto} data-cta="mailen" className="link inline-flex min-h-11 items-center">
             {company.email}
           </a>
         </p>
-        <p className="mt-4">
-          <a href="https://sleads.nl" target="_blank" rel="noopener noreferrer" className="link">
+        <p className="mt-2">
+          <a href="https://sleads.nl" target="_blank" rel="noopener noreferrer" className="link inline-flex min-h-11 items-center">
             Sleads
           </a>
         </p>

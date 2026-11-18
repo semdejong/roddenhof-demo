@@ -17,15 +17,14 @@ function Coat({ service }: { service: Service }) {
   );
 }
 
-function BuildingLines({ lit }: { lit?: string }) {
+function BuildingLines() {
   return (
     <ul className="mt-6">
-      {content.buildings.map((building) => (
-        <li key={building} className="border-t border-schaduw py-3">
-          {building === lit ? <Lamp className="mb-3" /> : null}
+      {content.buildings.map((building, index) => (
+        <li key={building} className="border-t border-schaduw py-2">
           <p
             className={`font-display leading-none ${
-              building === lit ? "text-[clamp(1.8rem,3.4vw,2.8rem)]" : "text-[clamp(1.35rem,2.4vw,1.9rem)]"
+              index % 3 === 0 ? "text-[clamp(1.8rem,3.2vw,2.6rem)]" : "text-[clamp(1.3rem,2.2vw,1.75rem)]"
             }`}
           >
             {building}
@@ -49,7 +48,8 @@ export default function ServiceScene({ service }: { service: Service }) {
         <Coat service={service} />
         <h2 className="mt-14 font-display text-[clamp(1.8rem,3vw,2.6rem)] leading-none">In Het Vechtdal</h2>
         <p className="mt-4 max-w-[38rem]">{content.home.paragraphs[1]}</p>
-        <BuildingLines lit="Landhuizen" />
+        <Lamp className="mt-8" />
+        <BuildingLines />
       </section>
     );
   }
@@ -64,7 +64,7 @@ export default function ServiceScene({ service }: { service: Service }) {
         <ol className="mt-8">
           {service.steps.map((step, index) => (
             <li key={step.title} className="py-4">
-              {index === 1 ? <Lamp className="mb-4" /> : <span className="mb-4 block h-px bg-schaduw" aria-hidden="true" />}
+              {index === 1 ? <Lamp className="mb-4" /> : <Lamp className="lamp-dim mb-4" />}
               <p className="meta text-sm">0{index + 1}</p>
               <h3 className="mt-1 font-display text-[clamp(1.7rem,3vw,2.4rem)] leading-none">{step.title}</h3>
               <p className="mt-2 max-w-[36rem]">{step.text}</p>
@@ -81,7 +81,7 @@ export default function ServiceScene({ service }: { service: Service }) {
         <h2 className="font-display text-[clamp(1.8rem,3vw,2.6rem)] leading-none">Hout aan twee kanten</h2>
         <div className="mt-6 grid md:grid-cols-2">
           <div className="border border-schaduw p-6">
-            <span className="mb-6 block h-5 bg-schaduw" aria-hidden="true" />
+            <Lamp className="lamp-dim bleed-x -mt-6 mb-6" />
             <p className="meta text-sm">Binnen</p>
             <p className="mt-3 font-display text-[clamp(1.7rem,3vw,2.3rem)] leading-none">Bij het interieur</p>
             <p className="mt-4">Deuren en betimmeringen die bij het schilderwerk binnen horen.</p>
@@ -90,7 +90,7 @@ export default function ServiceScene({ service }: { service: Service }) {
             </Link>
           </div>
           <div className="border border-schaduw bg-kalk p-6 md:border-l-0">
-            <Lamp className="-mx-6 -mt-6 mb-6 w-[calc(100%+3rem)]" />
+            <Lamp className="bleed-x -mt-6 mb-6" />
             <p className="meta text-sm">Buiten</p>
             <p className="mt-3 font-display text-[clamp(1.7rem,3vw,2.3rem)] leading-none">Aan het gebouw</p>
             <p className="mt-4">Kozijnen en ander hout aan de buitenzijde, in dezelfde volgorde: schuren, gronden, aflakken.</p>

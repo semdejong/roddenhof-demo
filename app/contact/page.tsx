@@ -27,10 +27,10 @@ export default function ContactPage() {
         </ul>
       </section>
       <div className="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
-        <address className="not-italic">
+        <address className="flex flex-col items-start not-italic">
           <p className="font-display text-[clamp(1.8rem,3vw,2.6rem)] leading-none">{company.name}</p>
           <p className="meta mt-4 text-sm">{company.place}</p>
-          <a href={company.phoneTel} data-cta="bellen" className="meta mt-6 block text-[clamp(1.8rem,3vw,2.4rem)] leading-none text-inkt">
+          <a href={company.phoneTel} data-cta="bellen" className="meta mt-6 inline-flex min-h-11 items-center text-[clamp(1.8rem,3vw,2.4rem)] leading-none text-inkt">
             {company.phoneDisplay}
           </a>
           <a href={company.mailto} data-cta="mailen" className="link mt-4 inline-flex min-h-11 items-center">

@@ -14,12 +14,12 @@ export default function OffertePage() {
   return (
     <article data-section="offerte" className="pb-16">
       <PageHeader title={offerte.h1} lede={offerte.lede} />
-      <p className="meta mb-8 text-sm">
-        <a href={company.phoneTel} data-cta="bellen" className="text-inkt">
+      <p className="meta mb-8 flex flex-wrap items-center gap-x-3 text-sm">
+        <a href={company.phoneTel} data-cta="bellen" className="inline-flex min-h-11 items-center text-inkt">
           {company.phoneDisplay}
         </a>
-        <span aria-hidden="true"> · </span>
-        <a href={company.mailto} data-cta="mailen" className="link">
+        <span aria-hidden="true">·</span>
+        <a href={company.mailto} data-cta="mailen" className="link inline-flex min-h-11 items-center">
           {company.email}
         </a>
       </p>
@@ -47,7 +47,7 @@ export default function OffertePage() {
         <ul className="mt-6">
           {content.services.map((service) => (
             <li key={service.href} className="grid gap-2 border-t border-schaduw py-4 sm:grid-cols-[minmax(12rem,0.7fr)_minmax(0,1fr)] sm:items-baseline sm:gap-8">
-              <Link href={service.href} className="link font-display text-[clamp(1.4rem,2.5vw,1.8rem)] leading-none">
+              <Link href={service.href} className="inline-flex min-h-11 items-center font-display text-[clamp(1.4rem,2.5vw,1.8rem)] leading-none text-inkt underline decoration-rood decoration-1 underline-offset-[0.2em]">
                 {service.title}
               </Link>
               <p>{service.summary}</p>

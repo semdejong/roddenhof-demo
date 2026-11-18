@@ -53,7 +53,7 @@ export default function ProfielPage() {
       </section>
 
       <section className="mt-14">
-        <p className="licht">Ons motto</p>
+        <p className="meta text-sm">Ons motto</p>
         <DisplayHeading as="p" className="mt-4 max-w-[16em] text-[clamp(2rem,4vw,3.3rem)]">
           {motto.short}
         </DisplayHeading>
@@ -61,12 +61,12 @@ export default function ProfielPage() {
         <p className="mt-4 max-w-[42rem]">{motto.follow}</p>
       </section>
 
-      <address className="mt-10 not-italic">
+      <address className="mt-10 flex flex-col items-start not-italic">
         <p className="meta text-sm">{company.place}</p>
-        <a href={company.phoneTel} data-cta="bellen" className="meta mt-3 block text-[1.8rem] leading-none text-inkt">
+        <a href={company.phoneTel} data-cta="bellen" className="meta mt-3 inline-flex min-h-11 items-center text-[1.8rem] leading-none text-inkt">
           {company.phoneDisplay}
         </a>
-        <a href={company.mailto} data-cta="mailen" className="link mt-3 inline-flex min-h-11 items-center">
+        <a href={company.mailto} data-cta="mailen" className="link mt-1 inline-flex min-h-11 items-center">
           {company.email}
         </a>
       </address>

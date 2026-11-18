@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CtaRow from "@/components/CtaRow";
+import Lamp from "@/components/Lamp";
 import PageHeader from "@/components/PageHeader";
 import ServiceScene from "@/components/ServiceScene";
 import type { Service } from "@/content";
@@ -17,17 +18,17 @@ export default function ServiceView({ service }: { service: Service }) {
               {paragraph}
             </p>
           ))}
-          <h2 className="mt-10 font-display text-[clamp(1.8rem,3vw,2.6rem)] leading-none">{service.notesTitle}</h2>
-          {service.notes.map((note) => (
-            <p key={note} className="mt-4 max-w-[40rem]">
-              {note}
-            </p>
-          ))}
+          <figure className="mt-10 max-w-[34rem]">
+            <Lamp />
+            <blockquote className="mt-4 font-display text-[clamp(1.55rem,2.6vw,2.05rem)] leading-[1.25]">
+              {service.notes[service.slug === "glaszetten" || service.slug === "renovatie-en-onderhoud" ? 2 : 0]}
+            </blockquote>
+          </figure>
         </div>
         <aside className="h-fit border border-schaduw bg-kalk p-5">
           <p className="font-display text-[1.8rem] leading-none">Vrijblijvend</p>
           <p className="mt-4 text-[1.0625rem]">Voor een vrijblijvende offerte en advies kunt u met ons contact opnemen.</p>
-          <CtaRow className="mt-5" />
+          <CtaRow stack className="mt-5" />
           <p className="meta mt-6 text-sm">{content.company.place}</p>
         </aside>
       </div>
@@ -38,7 +39,10 @@ export default function ServiceView({ service }: { service: Service }) {
           {others.map((item) => (
             <li key={item.href} className="border-t border-schaduw pt-4">
               <p className="meta text-sm">{item.licht}</p>
-              <Link href={item.href} className="link mt-2 font-display text-[1.7rem] leading-none">
+              <Link
+                href={item.href}
+                className="mt-2 inline-flex min-h-11 items-center font-display text-[1.7rem] leading-none text-inkt underline decoration-rood decoration-1 underline-offset-[0.2em]"
+              >
                 {item.title}
               </Link>
               <p className="mt-3">{item.summary}</p>

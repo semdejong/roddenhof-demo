@@ -10,7 +10,7 @@ export default function Home() {
   const { home, homeExtra, buildings, services, motto, company, werkwijze, profile } = content;
   return (
     <>
-      <section data-section="hero" className="grid items-end gap-12 pb-16 pt-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(16rem,0.7fr)] lg:pt-16">
+      <section data-section="hero" className="grid items-end gap-12 pb-24 pt-12 min-[1120px]:pb-16 lg:grid-cols-[minmax(0,1.35fr)_minmax(16rem,0.7fr)] lg:pt-16">
         <div className="rise">
           <div className="hero-measure">
             <Lamp sweep />
@@ -24,7 +24,7 @@ export default function Home() {
       </section>
 
       <section data-section="vak" className="pb-16">
-        <p className="licht">{homeExtra.tradeLabel}</p>
+        <p className="meta text-sm">{homeExtra.tradeLabel}</p>
         <ul className="mt-6">
           {homeExtra.trades.map((trade, index) => (
             <li key={trade.word} className="border-t border-schaduw py-5">
@@ -49,9 +49,9 @@ export default function Home() {
               className={`block min-h-44 border border-schaduw p-6 ${index === 1 ? "bg-kalk md:border-l-0" : ""}`}
             >
               {index === 1 ? (
-                <Lamp className="-mx-6 -mt-6 mb-6 w-[calc(100%+3rem)]" />
+                <Lamp className="bleed-x -mt-6 mb-6" />
               ) : (
-                <span className="-mx-6 -mt-6 mb-6 block h-5 w-[calc(100%+3rem)] bg-schaduw" aria-hidden="true" />
+                <Lamp className="lamp-dim bleed-x -mt-6 mb-6" />
               )}
               <p className="meta text-sm">{side.kicker}</p>
               <p className="mt-3 font-display text-[clamp(1.8rem,3vw,2.6rem)] leading-none">{side.title}</p>
@@ -75,9 +75,7 @@ export default function Home() {
               <li
                 key={building}
                 className={`border-t border-schaduw py-2 font-display leading-none ${
-                  index % 3 === 0
-                    ? "text-[clamp(2rem,4vw,3.3rem)]"
-                    : "pl-6 text-[clamp(1.45rem,2.4vw,2.15rem)] sm:pl-10"
+                  index % 3 === 0 ? "text-[clamp(2rem,4vw,3.3rem)]" : "text-[clamp(1.45rem,2.4vw,2.15rem)]"
                 }`}
               >
                 {building}
@@ -100,11 +98,11 @@ export default function Home() {
       </section>
 
       <section data-section="motto" className="py-16">
-        <p className="licht">Ons motto</p>
+        <p className="meta text-sm">Ons motto</p>
         <ol className="mt-6">
           {motto.lines.map((line, index) => (
             <li key={line} className="border-t border-schaduw py-4">
-              {index === 1 ? <Lamp className="mb-4 max-w-[12rem]" /> : null}
+              {index === 1 ? <Lamp className="mb-4" /> : null}
               <p className="font-display text-[clamp(2rem,5vw,3.6rem)] leading-none">{line}</p>
             </li>
           ))}
@@ -139,7 +137,7 @@ export default function Home() {
       </section>
 
       <section data-section="staat-voor" className="pb-16">
-        <p className="licht">Roddenhof staat voor</p>
+        <p className="meta text-sm">Roddenhof staat voor</p>
         <ul className="mt-6 grid gap-6 sm:grid-cols-2">
           {werkwijze.standFor.map((item) => (
             <li key={item.word} className="border-t border-schaduw pt-4">

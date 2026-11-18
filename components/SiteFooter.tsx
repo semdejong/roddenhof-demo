@@ -12,11 +12,11 @@ export default function SiteFooter() {
           <p className="font-display text-[clamp(1.8rem,3vw,2.5rem)] leading-none">{company.name}</p>
           <p className="mt-3 max-w-[18rem]">{company.tagline}</p>
           <p className="meta mt-4 text-sm">{company.place}</p>
-          <address className="mt-5 not-italic">
-            <a href={company.phoneTel} data-cta="bellen" className="meta block text-[1.7rem] leading-none text-inkt">
+          <address className="mt-5 flex flex-col items-start not-italic">
+            <a href={company.phoneTel} data-cta="bellen" className="meta inline-flex min-h-11 items-center text-[1.7rem] leading-none text-inkt">
               {company.phoneDisplay}
             </a>
-            <a href={company.mailto} data-cta="mailen" className="link mt-3 inline-block">
+            <a href={company.mailto} data-cta="mailen" className="link inline-flex min-h-11 items-center">
               {company.email}
             </a>
           </address>

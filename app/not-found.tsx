@@ -17,7 +17,7 @@ export default function NotFound() {
       <ul className="mt-6 max-w-[36rem]">
         {content.services.map((service) => (
           <li key={service.href} className="border-t border-schaduw py-3">
-            <Link href={service.href} className="link font-display text-[clamp(1.5rem,3vw,2rem)] leading-none">
+            <Link href={service.href} className="inline-flex min-h-11 items-center font-display text-[clamp(1.5rem,3vw,2rem)] leading-none text-inkt underline decoration-rood decoration-1 underline-offset-[0.2em]">
               {service.title}
             </Link>
           </li>
