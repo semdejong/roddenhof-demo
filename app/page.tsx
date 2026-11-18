@@ -7,7 +7,7 @@ import WallSwatch from "@/components/WallSwatch";
 import { content } from "@/content";
 
 export default function Home() {
-  const { home, buildings, services, motto, company, werkwijze } = content;
+  const { home, homeExtra, buildings, services, motto, company, werkwijze, profile } = content;
   return (
     <>
       <section data-section="hero" className="grid items-end gap-12 pb-16 pt-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(16rem,0.7fr)] lg:pt-16">
@@ -21,6 +21,44 @@ export default function Home() {
           <CtaRow className="mt-8" />
         </div>
         <WallSwatch />
+      </section>
+
+      <section data-section="vak" className="pb-16">
+        <p className="licht">{homeExtra.tradeLabel}</p>
+        <ul className="mt-6">
+          {homeExtra.trades.map((trade, index) => (
+            <li key={trade.word} className="border-t border-schaduw py-5">
+              {index === 1 ? <Lamp className="mb-4" /> : null}
+              <Link href={trade.href} className="link font-display text-[clamp(2.2rem,6vw,4.5rem)] leading-none">
+                {trade.word}
+              </Link>
+              <p className="mt-3 max-w-[36rem]">{trade.text}</p>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-8 max-w-[38rem]">{homeExtra.tradeLine}</p>
+      </section>
+
+      <section data-section="kanten" className="pb-16">
+        <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] leading-none">{homeExtra.sidesTitle}</h2>
+        <div className="mt-6 grid md:grid-cols-2">
+          {homeExtra.sides.map((side, index) => (
+            <Link
+              key={side.href}
+              href={side.href}
+              className={`block min-h-44 border border-schaduw p-6 ${index === 1 ? "bg-kalk md:border-l-0" : ""}`}
+            >
+              {index === 1 ? (
+                <Lamp className="-mx-6 -mt-6 mb-6 w-[calc(100%+3rem)]" />
+              ) : (
+                <span className="-mx-6 -mt-6 mb-6 block h-5 w-[calc(100%+3rem)] bg-schaduw" aria-hidden="true" />
+              )}
+              <p className="meta text-sm">{side.kicker}</p>
+              <p className="mt-3 font-display text-[clamp(1.8rem,3vw,2.6rem)] leading-none">{side.title}</p>
+              <p className="mt-4 max-w-[28rem]">{side.text}</p>
+            </Link>
+          ))}
+        </div>
       </section>
 
       <section data-section="werkgebied" className="pb-16">
@@ -62,12 +100,18 @@ export default function Home() {
       </section>
 
       <section data-section="motto" className="py-16">
-        <Lamp />
-        <p className="licht mt-6">Ons motto</p>
-        <DisplayHeading as="p" className="mt-4 max-w-[16em] text-[clamp(2rem,4.2vw,3.5rem)]">
-          {motto.short}
-        </DisplayHeading>
-        <p className="mt-6 max-w-[40rem]">Wij richten ons zowel op de particuliere als op de zakelijke markt.</p>
+        <p className="licht">Ons motto</p>
+        <ol className="mt-6">
+          {motto.lines.map((line, index) => (
+            <li key={line} className="border-t border-schaduw py-4">
+              {index === 1 ? <Lamp className="mb-4 max-w-[12rem]" /> : null}
+              <p className="font-display text-[clamp(2rem,5vw,3.6rem)] leading-none">{line}</p>
+            </li>
+          ))}
+        </ol>
+        <p className="mt-6 max-w-[40rem]">{motto.full}</p>
+        <p className="mt-4 max-w-[40rem]">{motto.follow}</p>
+        <p className="mt-4 max-w-[40rem]">Wij richten ons zowel op de particuliere als op de zakelijke markt.</p>
         <p className="mt-5">
           <Link href="/bedrijfsprofiel" className="link inline-flex min-h-11 items-center">
             Lees het bedrijfsprofiel
@@ -92,6 +136,19 @@ export default function Home() {
             Service en kwaliteit
           </Link>
         </p>
+      </section>
+
+      <section data-section="staat-voor" className="pb-16">
+        <p className="licht">Roddenhof staat voor</p>
+        <ul className="mt-6 grid gap-6 sm:grid-cols-2">
+          {werkwijze.standFor.map((item) => (
+            <li key={item.word} className="border-t border-schaduw pt-4">
+              <p className="font-display text-[clamp(1.7rem,3vw,2.4rem)] leading-none">{item.word}</p>
+              <p className="mt-3 max-w-[28rem]">{item.text}</p>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-8 max-w-[40rem]">{profile.workshop}</p>
       </section>
 
       <section data-section="afsluiting" className="pb-16">

@@ -13,12 +13,13 @@ export default function PrivacyPage() {
     <article data-section="privacy" className="pb-16">
       <PageHeader title={privacy.h1} />
       <div className="max-w-[42rem]">
-        {privacy.paragraphs.map((paragraph) => (
-          <p key={paragraph} className="mb-5">
-            {paragraph}
-          </p>
+        {privacy.sections.map((section) => (
+          <section key={section.title} className="mt-8 border-t border-schaduw pt-6">
+            <h2 className="font-display text-[clamp(1.6rem,3vw,2.2rem)] leading-none">{section.title}</h2>
+            <p className="mt-4">{section.text}</p>
+          </section>
         ))}
-        <p>
+        <p className="mt-8">
           <a href={company.phoneTel} data-cta="bellen" className="link">
             {company.phoneDisplay}
           </a>

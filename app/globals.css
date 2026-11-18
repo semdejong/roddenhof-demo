@@ -212,6 +212,26 @@ body.menu-open {
   text-shadow: 0.055em 0.03em 0 var(--schaduw);
 }
 
+.coat-layer {
+  border-top: 3px solid var(--schaduw);
+  padding: 1rem 0 1.2rem;
+}
+
+.coat-layer:nth-child(2) {
+  margin-left: 0.85rem;
+  border-top-color: var(--fall-a);
+}
+
+.coat-layer:nth-child(3) {
+  margin-left: 1.7rem;
+  border-top-color: var(--oranje);
+}
+
+.coat-layer:nth-child(4) {
+  margin-left: 2.55rem;
+  border-top-color: var(--rood);
+}
+
 .tick {
   display: block;
   width: 3.25rem;

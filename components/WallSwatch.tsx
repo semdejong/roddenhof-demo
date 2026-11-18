@@ -1,7 +1,7 @@
 /** Muurvlak: oneffenheden alleen zichtbaar waar de lamp strijkt. */
 export default function WallSwatch() {
   return (
-    <figure className="w-full max-w-[18rem] justify-self-end" aria-hidden="true">
+    <figure className="hidden w-full max-w-[18rem] justify-self-end min-[1120px]:block" aria-hidden="true">
       <svg viewBox="0 0 320 420" className="h-auto w-full border border-schaduw">
         <rect width="320" height="420" fill="#F4F1EC" />
         <rect x="26" y="42" width="128" height="2" fill="#EBE6E0" />

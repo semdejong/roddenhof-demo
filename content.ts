@@ -45,6 +45,7 @@ export const content = {
 
   motto: {
     short: "Duidelijke afspraken, de kwaliteit die u verwacht, voor een goede prijs.",
+    lines: ["Duidelijke afspraken.", "De kwaliteit die u verwacht.", "Voor een goede prijs."],
     full: "Duidelijke afspraken maken en de kwaliteit leveren die de klant verwacht, voor een goede prijs, dat is ons motto.",
     follow:
       "Er zijn te weinig bedrijven die dit waarmaken, maar Roddenhof Schilders doet zijn best om zijn motto na te komen, wat weer resulteert in veel tevreden klanten.",
@@ -121,6 +122,12 @@ export const content = {
           text: "De laatste laag werkt het buitenschilderwerk af.",
         },
       ],
+      notesTitle: "Eerst de ondergrond",
+      notes: [
+        "Buitenschilderwerk begint bij de ondergrond: wat nog vastzit, wat loslaat, en waar een nieuwe laag op kan. De kleur volgt daarop, niet andersom.",
+        "Losse lagen gaan eraf. Het oppervlak wordt geschuurd, gegrond en daarna afgelakt. Het onderhoud sluit aan op de staat van het pand.",
+        "Dat doen wij aan woningen en aan de andere gebouwen in ons werkgebied: appartementengebouwen, kantoren, scholen, fabrieken, landhuizen en utiliteitswerken. Ook nieuwbouw hoort daarbij.",
+      ],
     },
     {
       slug: "wandafwerking",
@@ -155,6 +162,12 @@ export const content = {
           title: "Afwerken",
           text: "De afwerklaag zet de wand dicht en egaal.",
         },
+      ],
+      notesTitle: "Binnen, vlak bekeken",
+      notes: [
+        "Een wand toont zich pas als het licht er vlak langs strijkt. Oneffenheden, aanzetten en plekken die nog openstaan, werken wij eerst bij. Daarna pas de grondlaag en de afwerking.",
+        "Binnenschilderwerk rekenen wij tot dit werk. Het is het schilderwerk binnen in woningen en in andere gebouwen, naast het buitenschilderwerk waar wij eveneens ruime ervaring mee hebben.",
+        "De aanpak hangt af van de wand die u heeft, niet van een vast recept. Voor een vrijblijvende offerte en advies kunt u met ons contact opnemen.",
       ],
     },
     {
@@ -191,6 +204,12 @@ export const content = {
           text: "De aflak werkt het houtwerk af, binnen of buiten.",
         },
       ],
+      notesTitle: "Hout, binnen en buiten",
+      notes: [
+        "Houtwerk zit in kozijnen, deuren en betimmeringen. Buiten heeft dat hout het weer te verduren. Binnen gaat het om het schilderwerk dat bij het interieur hoort. In beide gevallen is de volgorde dezelfde: voorbereiden, schuren, gronden, aflakken.",
+        "Waar een oude laag niet meer vastzit, halen wij die terug tot een gezonde ondergrond. Kaal hout krijgt eerst een grondlaag, zodat de aflak iets heeft om op te hechten.",
+        "Wij doen dit voor particulieren en voor zakelijke opdrachtgevers, vanuit Ommen, in Het Vechtdal.",
+      ],
     },
     {
       slug: "glaszetten",
@@ -221,6 +240,12 @@ export const content = {
           title: "Afwerken",
           text: "De aansluiting wordt afgewerkt.",
         },
+      ],
+      notesTitle: "Glas in hetzelfde werk",
+      notes: [
+        "Glaszetten hoort bij Roddenhof Schilders, naast schilderwerk en wandafwerking. Het is het plaatsen van glas en het vervangen van glas.",
+        "Wij nemen het oude glas uit het raam of het kozijn, zetten het nieuwe glas en werken de aansluiting af, zodat het weer dichtzit.",
+        "Glas staat vaak in hetzelfde kozijn als het houtwerk. Daarom kunt u glaszetten apart vragen, of samen met schilderwerk aan dat hout.",
       ],
     },
     {
@@ -253,6 +278,12 @@ export const content = {
           text: "Daarna gronden en werken wij af, volgens de afspraak.",
         },
       ],
+      notesTitle: "Nu, en daarna",
+      notes: [
+        "Renovatie is het weer in orde brengen van bestaand schilderwerk. Onderhoud is het bijhouden daarvan. Beide behoren tot ons werkterrein, samen met nieuwbouw en het onderhoud van utiliteitswerken.",
+        "Het advies is aangepast op uw situatie: de staat van de ondergrond, het gebouw, en wat u van het werk verwacht. Duidelijke afspraken horen daarbij.",
+        "De vertrouwensband stopt niet bij het einde van het werk. Wij hopen ook in de toekomst het schilderwerk voor u te mogen onderhouden, onder de garantie waarin drie partijen deelgenoot zijn.",
+      ],
     },
   ],
 
@@ -263,18 +294,36 @@ export const content = {
     lede: "Een vertrouwensrelatie met u als klant is voor ons essentieel.",
     paragraphs: [
       "Voor Schildersbedrijf Roddenhof is een vertrouwensrelatie met u als klant essentieel. Onze uitgangspunten daarbij zijn kwaliteit, service en advies. Een goede verhouding met onze klanten staat bij ons hoog in het vaandel.",
-      "Wij willen u het vertrouwen geven en het door u aan ons gegeven vertrouwen niet beschamen. Goede communicatie is dan ook erg belangrijk voor ons en wij staan altijd klaar met antwoorden op al uw vragen.",
+      "Wij willen u het vertrouwen geven en het door u aan ons gegeven vertrouwen niet beschamen. Goede communicatie is dan ook erg belangrijk voor ons en wij staan altijd klaar met antwoorden op al uw vragen, mits mogelijk.",
       "De vertrouwensband die wij op deze manier hopen op te bouwen, stopt uiteraard niet bij het einde van het werk, want wij hopen ook in de toekomst voor u het schilderwerk te mogen onderhouden.",
     ],
     garantieIntro:
-      "Schildersbedrijf Roddenhof schildert dan ook onder garantie. Drie partijen zijn deelgenoot binnen die garantie.",
+      "Schildersbedrijf Roddenhof schildert dan ook onder garantie. Drie partijen zijn deelgenoot binnen die garantie, te weten:",
     partners: [
       { index: "01", name: "De verfleverancier" },
       { index: "02", name: "Het uitvoerende schildersbedrijf" },
       { index: "03", name: "De eigenaar van het pand" },
     ],
     standForLead: "Kortom, Roddenhof staat voor:",
-    standFor: ["Veilig", "Betrouwbaar", "Klantgericht", "Een optimaal kwaliteitsresultaat"],
+    standFor: [
+      { word: "Veilig", text: "Een vertrouwensrelatie met u als klant is voor ons essentieel." },
+      { word: "Betrouwbaar", text: "Wij willen het door u gegeven vertrouwen niet beschamen." },
+      { word: "Klantgericht", text: "Wij staan altijd klaar met antwoorden op al uw vragen, mits mogelijk." },
+      { word: "Een optimaal kwaliteitsresultaat", text: "Wij garanderen daarbij kwaliteit." },
+    ],
+    basesTitle: "Drie uitgangspunten",
+    bases: [
+      { title: "Kwaliteit", text: "Wij garanderen daarbij kwaliteit. Het motto zegt hetzelfde, in gewone woorden: de kwaliteit die u verwacht, voor een goede prijs." },
+      { title: "Service", text: "Een goede verhouding met onze klanten staat hoog in het vaandel. Service is bereikbaar zijn, en blijven, ook als het werk klaar is." },
+      { title: "Advies", text: "Geen algemeen verhaal, maar een advies voor onderhoud dat is aangepast op uw situatie." },
+    ],
+    pathTitle: "Van afspraak tot onderhoud",
+    path: [
+      { title: "Afspreken", text: "Duidelijke afspraken maken. Wat het werk is, en wat u ervan mag verwachten." },
+      { title: "Adviseren", text: "Kijken naar de staat van het schilderwerk en een advies geven dat daarbij past." },
+      { title: "Uitvoeren", text: "Voorbereiden, schuren, gronden en afwerken. Glas plaatsen of vervangen waar dat bij het werk hoort." },
+      { title: "Bijhouden", text: "De vertrouwensband stopt niet bij het einde van het werk. Wij hopen het schilderwerk ook daarna te onderhouden." },
+    ],
   },
 
   profile: {
@@ -286,6 +335,17 @@ export const content = {
       "Schildersbedrijf Roddenhof is een bedrijf opgericht in 1997, met daarbij een speciaal ingerichte werkplaats voorzien van alle noodzakelijke voorzieningen.",
       "Wij richten ons zowel op de particuliere als op de zakelijke markt.",
     ],
+    marks: [
+      { year: "1990", label: "Schilder sinds", text: "De eigenaar is de heer Arjan Roddenhof, werkzaam als schilder sinds 1990." },
+      { year: "1997", label: "Bedrijf opgericht", text: "Schildersbedrijf Roddenhof is opgericht in 1997, met een speciaal ingerichte werkplaats, voorzien van alle noodzakelijke voorzieningen." },
+    ],
+    markets: [
+      { title: "Particulier", text: "Woningen en landhuizen. Binnen- en buitenschilderwerk, hout, glas en het onderhoud dat daarbij hoort." },
+      { title: "Zakelijk", text: "Appartementengebouwen, kantoren, scholen, fabrieken, utiliteitswerken en nieuwbouw." },
+    ],
+    workshopTitle: "De werkplaats",
+    workshop:
+      "Bij het bedrijf hoort een speciaal ingerichte werkplaats, voorzien van alle noodzakelijke voorzieningen. Vanuit Ommen werken wij voor de particuliere en de zakelijke markt, in Het Vechtdal.",
   },
 
   contact: {
@@ -296,6 +356,12 @@ export const content = {
     formTitle: "Stuur een bericht",
     submit: "Bericht opstellen",
     subject: "Bericht aan Schildersbedrijf Roddenhof",
+    reasonsTitle: "Waarvoor u belt of schrijft",
+    reasons: [
+      { title: "Een vrijblijvende offerte", text: "Voor schilderwerk, wandafwerking, houtwerk, glaszetten of onderhoud. Het advies stemmen wij af op uw situatie." },
+      { title: "Advies over onderhoud", text: "Wij kijken naar de staat van het werk en geven een advies dat daarbij past, voor particulieren en voor zakelijke opdrachtgevers." },
+      { title: "Een vraag tussendoor", text: "Goede communicatie is belangrijk voor ons. Wij staan altijd klaar met antwoorden op al uw vragen, mits mogelijk." },
+    ],
   },
 
   offerte: {
@@ -318,23 +384,57 @@ export const content = {
     ],
     places: ["Binnen", "Buiten"],
     markets: ["Particulier", "Zakelijk"],
+    hintsTitle: "Wat wij graag van u horen",
+    hints: [
+      { title: "Het soort werk", text: "Buitenschilderwerk, wandafwerking, houtwerk, glaszetten, renovatie en onderhoud, binnenschilderwerk. Eén vak, of meerdere tegelijk." },
+      { title: "Binnen, buiten of beide", text: "Een kozijn kan aan twee kanten zitten. Een wand meestal maar aan één. Zeg het zoals het pand het vraagt." },
+      { title: "Particulier of zakelijk", text: "Wij richten ons op beide markten, van woning tot utiliteitswerk en nieuwbouw." },
+      { title: "De situatie, in het kort", text: "Een paar zinnen zijn genoeg: welk gebouw, welke onderdelen, en wanneer het u schikt. Een periode is niet verplicht." },
+    ],
   },
 
   privacy: {
     h1: "Privacy",
     seoDescription:
       "Deze conceptsite van Sleads voor Schildersbedrijf Roddenhof gebruikt een cookieloos meetscript en stuurt formulieren niet naar een server.",
-    paragraphs: [
-      "Deze website is een concept van Sleads voor Schildersbedrijf Roddenhof in Ommen. Het is een voorstel om te laten zien hoe een site eruit kan zien. Het is niet de officiële website van het schildersbedrijf.",
-      "Formulieren op deze conceptsite sturen niets naar een server. Vult u een bericht of een offerteaanvraag in, dan opent uw eigen mailprogramma met de tekst erin. U verstuurt het bericht zelf, naar info@roddenhof.nl.",
-      "Sleads gebruikt op dit concept een cookieloos meetscript. Dat script plaatst geen cookies en bouwt geen profiel van u op. Het houdt bij dat een pagina is bekeken, zodat zichtbaar is of het concept wordt gebruikt.",
-      "Deze pagina legt geen rechten of plichten van Schildersbedrijf Roddenhof vast. Voor vragen over schilderwerk belt of mailt u het bedrijf. Voor vragen over dit concept kunt u terecht bij Sleads.",
+    sections: [
+      {
+        title: "Een concept, geen officiële site",
+        text: "Deze website is een concept van Sleads voor Schildersbedrijf Roddenhof in Ommen, in het hart van Het Vechtdal. Het laat zien hoe een site voor het schildersbedrijf eruit kan zien. Het is niet de officiële website van het bedrijf, en het vervangt die ook niet.",
+      },
+      {
+        title: "Formulieren blijven in uw mail",
+        text: "Er staat geen formulier op deze site dat gegevens naar een server stuurt. Vult u een bericht of een offerteaanvraag in, dan opent uw eigen mailprogramma met de tekst erin, beginnend met een groet. U verstuurt het bericht zelf, naar info@roddenhof.nl. Sluit u het mailprogramma, dan is er vanaf deze site niets verzonden.",
+      },
+      {
+        title: "Cookieloos meetscript",
+        text: "Sleads gebruikt op dit concept een cookieloos meetscript. Dat script plaatst geen cookies en bouwt geen profiel van u op. Het houdt bij dat een pagina is bekeken, zodat zichtbaar is of het concept wordt gebruikt. Meer doet het niet.",
+      },
+      {
+        title: "Geen juridische uitspraken",
+        text: "Deze pagina legt geen rechten of plichten van Schildersbedrijf Roddenhof vast en doet geen uitspraak over bewaartermijnen of grondslagen. Voor vragen over schilderwerk belt of mailt u het bedrijf. Voor vragen over dit concept kunt u terecht bij Sleads.",
+      },
     ],
   },
 
   notFound: {
     h1: "Deze pagina bestaat niet",
-    text: "Het adres is niet bekend op deze conceptsite. Ga terug naar de startpagina, of neem contact op met Schildersbedrijf Roddenhof.",
+    text: "Het adres is niet bekend op deze conceptsite. Het werk van Roddenhof wel: schilderwerk, glas en wandafwerking, vanuit Ommen.",
+  },
+
+  homeExtra: {
+    tradeLabel: "Het vak",
+    tradeLine: "Schilder-, glas- en wandafwerking. Zo staat het bij de naam, en zo is het werk verdeeld.",
+    trades: [
+      { word: "Schilderwerk", href: "/buitenschilderwerk", text: "Binnen en buiten, aan woningen en aan andere gebouwen." },
+      { word: "Glas", href: "/glaszetten", text: "Plaatsen en vervangen, en de aansluiting afwerken." },
+      { word: "Wandafwerking", href: "/wandafwerking", text: "Wanden vlak maken en afwerken, inclusief binnenschilderwerk." },
+    ],
+    sidesTitle: "Twee kanten van hetzelfde werk",
+    sides: [
+      { href: "/wandafwerking", kicker: "Binnen", title: "Wand en binnenschilderwerk", text: "Ruime ervaring met het schilderwerk binnen. Oneffenheden eerst, daarna de afwerking." },
+      { href: "/buitenschilderwerk", kicker: "Buiten", title: "Buitenschilderwerk", text: "Schilderwerk en onderhoud aan de buitenzijde, met een advies dat is aangepast op uw situatie." },
+    ],
   },
 } as const;
 

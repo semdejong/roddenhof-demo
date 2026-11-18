@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CtaRow from "@/components/CtaRow";
 import DisplayHeading from "@/components/DisplayHeading";
+import Lamp from "@/components/Lamp";
 import PageHeader from "@/components/PageHeader";
 import { content } from "@/content";
 
@@ -10,23 +11,48 @@ export const metadata: Metadata = {
 };
 
 export default function ProfielPage() {
-  const { profile, company, motto } = content;
+  const { profile, company, motto, buildings } = content;
   return (
     <article data-section="profiel" className="pb-16">
       <PageHeader title={profile.h1} lede={profile.lede} />
-      <p className="meta text-sm">Schilder sinds {company.painterSince}</p>
-      <p className="meta mt-1 text-sm">Opgericht in {company.founded}</p>
-      <h2 className="mt-6 font-display text-[clamp(2.2rem,4.5vw,3.8rem)] leading-none">{company.owner}</h2>
-      <div className="mt-6 max-w-[42rem]">
-        {profile.paragraphs.map((paragraph) => (
-          <p key={paragraph} className="mb-4">
-            {paragraph}
-          </p>
-        ))}
-        <p>{company.ownerLine}</p>
-      </div>
 
-      <section className="mt-12">
+      <ul className="grid gap-px bg-schaduw sm:grid-cols-2">
+        {profile.marks.map((mark) => (
+          <li key={mark.year} className="bg-muur px-1 py-6 sm:px-6">
+            <p className="meta text-sm">{mark.label}</p>
+            <p className="mt-2 font-display text-[clamp(4.5rem,10vw,7.5rem)] leading-none">{mark.year}</p>
+            <p className="mt-4 max-w-[28rem]">{mark.text}</p>
+          </li>
+        ))}
+      </ul>
+
+      <section className="mt-14" data-section="markten">
+        <h2 className="font-display text-[clamp(1.8rem,3vw,2.6rem)] leading-none">{company.owner}</h2>
+        <p className="mt-4 max-w-[40rem]">{profile.paragraphs[1]}</p>
+        <div className="mt-8 grid gap-8 md:grid-cols-2">
+          {profile.markets.map((market) => (
+            <div key={market.title} className="border-t border-schaduw pt-4">
+              <h3 className="font-display text-[clamp(1.8rem,3vw,2.5rem)] leading-none">{market.title}</h3>
+              <p className="mt-3 max-w-[28rem]">{market.text}</p>
+            </div>
+          ))}
+        </div>
+        <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
+          {buildings.map((building) => (
+            <li key={building} className="font-display text-[clamp(1.25rem,2vw,1.6rem)] leading-none">
+              {building}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mt-14 border border-schaduw bg-kalk px-5 py-8 sm:px-8" data-section="werkplaats">
+        <Lamp />
+        <h2 className="mt-6 font-display text-[clamp(1.8rem,3vw,2.6rem)] leading-none">{profile.workshopTitle}</h2>
+        <p className="mt-4 max-w-[40rem]">{profile.workshop}</p>
+      </section>
+
+      <section className="mt-14">
         <p className="licht">Ons motto</p>
         <DisplayHeading as="p" className="mt-4 max-w-[16em] text-[clamp(2rem,4vw,3.3rem)]">
           {motto.short}

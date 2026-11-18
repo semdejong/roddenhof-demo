@@ -10,6 +10,7 @@ export default function SiteFooter() {
       <div className="grid gap-10 py-12 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
         <div>
           <p className="font-display text-[clamp(1.8rem,3vw,2.5rem)] leading-none">{company.name}</p>
+          <p className="mt-3 max-w-[18rem]">{company.tagline}</p>
           <p className="meta mt-4 text-sm">{company.place}</p>
           <address className="mt-5 not-italic">
             <a href={company.phoneTel} data-cta="bellen" className="meta block text-[1.7rem] leading-none text-inkt">

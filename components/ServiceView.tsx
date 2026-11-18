@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CtaRow from "@/components/CtaRow";
 import PageHeader from "@/components/PageHeader";
+import ServiceScene from "@/components/ServiceScene";
 import type { Service } from "@/content";
 import { content } from "@/content";
 
@@ -16,16 +17,12 @@ export default function ServiceView({ service }: { service: Service }) {
               {paragraph}
             </p>
           ))}
-          <h2 className="mt-10 font-display text-[clamp(1.8rem,3vw,2.6rem)] leading-none">{service.stepsTitle}</h2>
-          <ol className="mt-6">
-            {service.steps.map((step, index) => (
-              <li key={step.title} className="border-t border-schaduw py-4">
-                <p className="meta text-sm">0{index + 1}</p>
-                <h3 className="mt-1 font-display text-[1.6rem] leading-none">{step.title}</h3>
-                <p className="mt-2 max-w-[38rem] text-[1.0625rem]">{step.text}</p>
-              </li>
-            ))}
-          </ol>
+          <h2 className="mt-10 font-display text-[clamp(1.8rem,3vw,2.6rem)] leading-none">{service.notesTitle}</h2>
+          {service.notes.map((note) => (
+            <p key={note} className="mt-4 max-w-[40rem]">
+              {note}
+            </p>
+          ))}
         </div>
         <aside className="h-fit border border-schaduw bg-kalk p-5">
           <p className="font-display text-[1.8rem] leading-none">Vrijblijvend</p>
@@ -34,14 +31,17 @@ export default function ServiceView({ service }: { service: Service }) {
           <p className="meta mt-6 text-sm">{content.company.place}</p>
         </aside>
       </div>
+      <ServiceScene service={service} />
       <div className="border-t border-schaduw py-10">
         <h2 className="font-display text-[clamp(1.8rem,3vw,2.4rem)] leading-none">Ook in ons werk</h2>
-        <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+        <ul className="mt-6 grid gap-6 sm:grid-cols-2">
           {others.map((item) => (
-            <li key={item.href}>
-              <Link href={item.href} className="link inline-flex min-h-11 items-center">
+            <li key={item.href} className="border-t border-schaduw pt-4">
+              <p className="meta text-sm">{item.licht}</p>
+              <Link href={item.href} className="link mt-2 font-display text-[1.7rem] leading-none">
                 {item.title}
               </Link>
+              <p className="mt-3">{item.summary}</p>
             </li>
           ))}
         </ul>
